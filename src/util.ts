@@ -257,3 +257,16 @@ export function validateEmbedUrl(embedUrl: string): boolean {
       (allowedPowerBiHostsRegex.test(url.hostname) || allowedPowerBiHostsSovRegex.test(url.hostname));
   }
 }
+
+/**
+ * Calculates the percentage of a part relative to a total.
+ * @param part - The part value.
+ * @param total - The total value.
+ * @returns The percentage as a number, or 0 if the total is 0.
+ */
+export function calculatePercentage(part: number, total: number): number {
+  if (total === 0) {
+      return 0;
+  }
+  return (part / total) * 100;
+}
